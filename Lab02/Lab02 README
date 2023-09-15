@@ -1,0 +1,13 @@
+These are the files used for ECE141 Lab02 assignment:
+
+Color.h - This is a header is used to change the text color displayed on the terminal screen.
+
+Timer.h - This is a header that is used for timing code.
+
+lab02.cc - Contains the actual code for the lab assignment with three functions, slowFib, fastFib, and main.
+
+results.txt - Contains all the number tested, times from slowFib, and times from fastFib in a easy copy and paste formet.
+
+slowfib.txt - Contains timing results breakdown
+
+fastfib.txt - Contains timing results breakdown
