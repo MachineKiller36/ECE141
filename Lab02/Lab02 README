@@ -1,5 +1,7 @@
 These are the files used for ECE141 Lab02 assignment:
 
+// C++
+
 Color.h - This is a header is used to change the text color displayed on the terminal screen.
 
 Timer.h - This is a header that is used for timing code.
@@ -11,3 +13,9 @@ results.txt - Contains all the number tested, times from slowFib, and times from
 slowfib.txt - Contains timing results breakdown
 
 fastfib.txt - Contains timing results breakdown
+
+// MATLAB
+
+Lab02GraphCode.m - Is the MATLAB code to create a visualization of the two algorithms running time.
+
+Lab02Grpah.fig  - Is the graph created by the MATLAB code.
