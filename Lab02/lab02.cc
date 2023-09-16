@@ -7,6 +7,8 @@
 
 /*
 	 Purpose of the function is to compute the fibnocci sequence for a number, quickly
+  How it works: It caches any new computations and uses previously computation instead of
+                recomputing it. The flaw of slowFib is it repeatedly redoes the same computations.
  */
 // Pre allocated results inside a cache
 std::vector<uint64_t> cache = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181 };
