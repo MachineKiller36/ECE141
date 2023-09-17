@@ -14,6 +14,6 @@ slowfib.txt        - Contains timing results breakdown
 fastfib.txt        - Contains timing results breakdown
 
 // Figures
-user_interface.png - Is a picture of the user interface in action.
-test_bench.png     - Is a picture of the test bench in action.
+userInterface.png - Is a picture of the user interface in action.
+testbench.png     - Is a picture of the test bench in action.
 Lab02Graph.fig     - Is the graph created by the MATLAB code.
