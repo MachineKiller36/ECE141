@@ -1,10 +1,16 @@
-#include <iostream>
-#include "Timer.h"
-#include "Colors.h"
-#include <fstream>
-#include <string>
-#include <vector>
+#include <iostream>     // Allows from program to take in User inputs and output to terminal screen.
+#include "Timer.h"	// Personal header that implemnets a timer class and functions.
+#include "Colors.h"	// Personal header that allows for terminal text color to be changed.
+#include <fstream>	// Allows for text files to be read and outputted to.
+#include <string>	// Data type that holds an array of character
+#include <vector>	// Data type that is a dynamic array
 
+/*
+	How to use program:
+ 	1. It will automatic go into the User interface and will prompt the user to enter a number to test the Fibonacci functions.
+  	   Entering a negative number will quit the User interface.
+      	2. After the user interface, it will automatically test bench values 0-49 for each functions storing the results and comparing them. 	
+*/
 /*
 	 Purpose of the function is to compute the fibnocci sequence for a number, quickly
   How it works: It caches any new computations and uses previously computation instead of
