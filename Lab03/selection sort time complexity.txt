@@ -1,0 +1,48 @@
+#include <iostream>
+//// Selection Sort Algorithm ////
+/*
+        Parameters:
+                array size and the array itself.
+
+        How it works:
+
+ */
+void selection(int size, int data[]) {
+        for(int index = 0; index < size-1; index++) {				//c1 n+1
+                int smallest = index;						//c2 n
+                for(int position = index+1; position < size; position++) {	//c3 Σ(j=1;n)tj
+                        if(data[position] < data[smallest]) {			//c4 Σ(j=1;n)tj-1
+                                smallest = position;				//c5 Σ(j=1;n)tj-2 or 0 
+                        }
+                }
+                int temp = data[index];						//c6 n
+                data[index] = data[smallest];					//c7 n
+                data[smallest] = temp;						//c8 n
+        }
+}
+Worst case: c1(n+1)+c2(n)+c3(Σ(j=1;n)tj)+c4(Σ(j=1;n)tj-1)+c5(Σ(j=1;n)tj-2)+n(c6+c7+c8) = O(n^2)
+Average case: c1(n+1)+c2(n)+c3(Σ(j=1;n)tj)+c4(Σ(j=1;n)tj-1)+c5(Σ(j=1;n)tj-2)+n(c6+c7+c8) = Θ(n^2)
+Best case: c1(n+1)+c2(n)+c3(Σ(j=1;n)tj)+c4(Σ(j=1;n)tj-1)+n(c6+c7+c8) = Ω(n^2)
+
+//// Bubble Sort Algorithm ////
+/*
+        Parameters is the array size and the array itself.
+ */
+void bubble(int size, int data[]) {
+        for(int index = 0; index< size; index++) {				//c1 n+2
+                for(int position = size; position > index; position--) {	//c2 Σ(j=1;n)tj
+                        if(data[position] < data[position-1]) {			//c3 Σ(j=1;n)tj-1
+                                int temp = data[position];			//c4 Σ(j=1;n)tj-2 or 0
+                                data[position] = data[position-1];		//c5 Σ(j=1;n)tj-2 or 0
+                                data[position-1] = temp;			//c6 Σ(j=1;n)tj-2 or 0
+                        }
+                }
+        }
+}
+Worst case: c1(n+2)+c2(Σ(j=1;n)tj)+c3(Σ(j=1;n)tj-1)+c4(Σ(j=1;n)tj-2)+c5(Σ(j=1;n)tj-2)+c6(Σ(j=1;n)tj-2)=O(n^2)
+Average case: c1(n+2)+c2(Σ(j=1;n)tj)+c3(Σ(j=1;n)tj-1)+c4(Σ(j=1;n)tj-2)+c5(Σ(j=1;n)tj-2)+c6(Σ(j=1;n)tj-2)=Θ(n^2)
+Best Case: c1(n+2)+c2(Σ(j=1;n)tj)+c3(Σ(j=1;n)tj-1)= Ω(n^2)
+
+int main() {
+	
+}
