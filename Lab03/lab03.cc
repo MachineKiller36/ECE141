@@ -93,32 +93,220 @@ int main() {
                                 user_array_2[index] = user_element;   // Inserts input into the array
                         }
                 }
-                std::cout << "User array:\n";
-                for(int index = 0; index < user_size; index++) {
-                        std::cout << user_array[index] << "\t";      // Prints unmodified array
+                if(user_size < 50) {
+                        std::cout << "User array:\n";
+                        for(int index = 0; index < user_size; index++) {
+                                std::cout << user_array[index] << "\t";
+                        }
                 }
                 std::cout << "\n\nSelection sort:\n";
-                time.start();                                        // Takes start time
-                selection(user_size,user_array);                     // Array 1 undergoes selection sort
-                time.stop();                                         // Takes end time
-                time.print_screen();                                 // Prints time results
+                time.start();
+                selection(user_size,user_array);
+                time.stop();
+                time.print_screen();
 
                 std::cout << "\nBubble sort:\n";
-                time.start();                                        // Takes start time
-                bubble(user_size, user_array_2);                     // Array 2 undergoes bubble sort
-                time.stop();                                         // Takes end time
-                time.print_screen();                                 // Prints time results
-                
-                std::cout << "Selection sort resulting array:\n";
-                for(int index = 0; index < user_size; index++) {
-                        std::cout << "\t" << user_array[index];      // Prints list order thats under went selection sort
+                time.start();
+                bubble(user_size, user_array_2);
+                time.stop();
+                time.print_screen();
+                if(user_size < 50) {
+                        std::cout << "\n\nSelection sort resulting array:\n";
+                        for(int index = 0; index < user_size; index++) {
+                                std::cout << "\t" << user_array[index];
+                        }
+                        std::cout << "\nBubble sort resulting array:\n";
+                        for(int index = 0; index < user_size; index++) {
+                                std::cout << "\t" << user_array_2[index];
+                        }
                 }
-                std::cout << "\nBubble sort resulting array:\n";
-                for(int index = 0; index < user_size; index++) {
-                        std::cout << "\t" << user_array_2[index];   // Prints list order thats under went bubble sort
-                }
-                std::cout << "\n\n\n\n\n\n\n";                      // "Clears" terminal screen
+                std::cout << "\n\n\n\n\n\n\n";
         }
-
         //// Test Bench ////
+                //// Test Bench ////
+        int short_sorted_select[10];
+        int short_sorted_bubble[10];
+        int short_half_select[10];
+        int short_half_bubble[10];
+        int short_reverse_select[10];
+        int short_reverse_bubble[10];
+
+        int medium_sorted_select[50];
+        int medium_sorted_bubble[50];
+        int medium_half_select[50];
+        int medium_half_bubble[50];
+        int medium_reverse_select[50];
+        int medium_reverse_bubble[50];
+
+        int long_sorted_select[100];
+        int long_sorted_bubble[100];
+        int long_half_select[100];
+        int long_half_bubble[100];
+        int long_reverse_select[100];
+        int long_reverse_bubble[100];
+        // Primes Sorted Arrays //
+        for(int i = 0; i < 100; i++) {
+                if(i < 10) {
+                        short_sorted_select[i] = i;
+                        short_sorted_bubble[i] = i;
+                }
+                if(i < 50) {
+                        medium_sorted_select[i] = i;
+                        medium_sorted_bubble[i] = i;
+                }
+                if(i < 100) {
+                        long_sorted_select[i] = i;
+                        long_sorted_bubble[i] = i;
+                }
+        }
+        // Primes Reverse Sorted Arrays //
+        int value1 = 10;
+        int value2 = 50;
+        int value3 = 100;
+        for(int i = 0; i < 100; i++) {
+                if(i < 10) {
+                        short_reverse_select[i] = value1;
+                        short_reverse_bubble[i] = value1;
+                }
+                if(i < 50) {
+                        medium_reverse_select[i] = value2;
+                        medium_reverse_bubble[i] = value2;
+                }
+                if(i < 100) {
+                        long_reverse_select[i] = value3;
+                        long_reverse_bubble[i] = value3;
+                }
+                value1--;
+                value2--;
+                value3--;
+        }
+        // Primes Half Sorted Arrays //
+        value1 = 10;
+        for(int i = 0; i < 10; i++) {
+                if(i < 5) {
+                        short_half_select[i] = i;
+                        short_half_bubble[i] = i;
+                } else {
+                        short_half_select[i] = value1;
+                        short_half_bubble[i] = value1;
+                        value1--;
+                }
+        }
+        value2 = 50;
+        for(int i = 0; i < 50; i++) {
+                if(i < 25) {
+                        medium_half_select[i] = i;
+                        medium_half_bubble[i] = i;
+                } else  {
+                        medium_half_select[i] = value2;
+                        medium_half_bubble[i] = value2;
+                        value2--;
+                }
+        }
+                value3 = 100;
+        for(int i = 0; i < 100; i++) {
+                if(i < 50) {
+                        long_half_select[i] = i;
+                        long_half_bubble[i] = i;
+                } else {
+                        long_half_select[i] = value3;
+                        long_half_bubble[i] = value3;
+                        value3--;
+                }
+        }
+        // Time comparison //
+//// Sorted Tests ////
+        std::cout << "\n\n\n\t\t\tSorted\n\nLength\t|\tSelection\t|\tBubble\n";
+        time.start();
+        selection(10,short_sorted_select);
+        time.stop();
+        double select_time = time.get_time_micro();
+        time.start();
+        bubble(10,short_sorted_bubble);
+        time.stop();
+        double bubble_time = time.get_time_micro();
+        std::cout << "Short\t|\t " << select_time << " us \t|\t " << bubble_time << " us\n";
+
+        time.start();
+        selection(50,medium_sorted_select);
+        time.stop();
+        select_time = time.get_time_micro();
+        time.start();
+        bubble(50,medium_sorted_bubble);
+        time.stop();
+        bubble_time = time.get_time_micro();
+        std::cout << "Medium\t|\t " << select_time << " us \t|\t " << bubble_time << " us\n";
+
+        time.start();
+        selection(100,long_sorted_select);
+        time.stop();
+        select_time = time.get_time_micro();
+        time.start();
+        bubble(100,long_sorted_bubble);
+        time.stop();
+        bubble_time = time.get_time_micro();
+        std::cout << "Long\t|\t " << select_time << " us \t|\t " << bubble_time << " us\n";
+//// Half-Sorted Tests ////
+        std::cout << "\n\n\n\t\t\tHalf-Sorted\n\nLength\t|\tSelection\t|\tBubble\n";
+        time.start();
+        selection(10,short_half_select);
+        time.stop();
+        select_time = time.get_time_micro();
+        time.start();
+        bubble(10,short_half_bubble);
+        time.stop();
+        bubble_time = time.get_time_micro();
+        std::cout << "Short\t|\t " << select_time << " us \t|\t " << bubble_time << " us\n";
+
+        time.start();
+        selection(50,medium_half_select);
+        time.stop();
+        select_time = time.get_time_micro();
+        time.start();
+        bubble(50,medium_half_bubble);
+        time.stop();
+        bubble_time = time.get_time_micro();
+        std::cout << "Medium\t|\t " << select_time << " us \t|\t " << bubble_time << " us\n";
+
+        time.start();
+        selection(100,long_half_select);
+        time.stop();
+        select_time = time.get_time_micro();
+        time.start();
+        bubble(100,long_half_bubble);
+        time.stop();
+        bubble_time = time.get_time_micro();
+        std::cout << "Long\t|\t " << select_time << " us \t|\t " << bubble_time << " us\n";
+//// Reverse Sorted Tests /////
+        std::cout << "\n\n\n\t\t\tReverse Sorted\n\nLength\t|\tSelection\t|\tBubble\n";
+        time.start();
+        selection(10,short_reverse_select);
+        time.stop();
+        select_time = time.get_time_micro();
+        time.start();
+        bubble(10,short_reverse_bubble);
+        time.stop();
+        bubble_time = time.get_time_micro();
+        std::cout << "Short\t|\t " << select_time << " us \t|\t " << bubble_time << " us\n";
+
+        time.start();
+        selection(50,medium_reverse_select);
+        time.stop();
+        select_time = time.get_time_micro();
+        time.start();
+        bubble(50,medium_reverse_bubble);
+        time.stop();
+        bubble_time = time.get_time_micro();
+        std::cout << "Medium\t|\t " << select_time << " us \t|\t " << bubble_time << " us\n";
+
+        time.start();
+        selection(100,long_reverse_select);
+        time.stop();
+        select_time = time.get_time_micro();
+        time.start();
+        bubble(100,long_reverse_bubble);
+        time.stop();
+        bubble_time = time.get_time_micro();
+        std::cout << "Long\t|\t " << select_time << " us \t|\t " << bubble_time << " us\n\n\n";
+}
 }
