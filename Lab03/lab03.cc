@@ -19,7 +19,7 @@
                 Average case: Θ( n^2 )
                 Best case:    O( n^2 )
  */
-void selection(int size, long long int data[]) {
+void selection(int size, int data[]) {
         for(int index = 0; index < size; index++) {                             // Iterates through all elements
                 int smallest = index;                                           // Sets the index to smallest
                 for(int position = index+1; position < size; position++) {      // Iterates through all
@@ -27,7 +27,7 @@ void selection(int size, long long int data[]) {
                                 smallest = position;                            // Sets smallest equal to position
                         }
                 }
-                long long int temp = data[index];                                // Temporary variable to hold data at index values
+                int temp = data[index];                                // Temporary variable to hold data at index values
                 data[index] = data[smallest];                                   // Sets data at index with the value at data smallest
                 data[smallest] = temp;                                          // Sets data at smallest with temporary variable
         }
@@ -48,11 +48,11 @@ void selection(int size, long long int data[]) {
                 Average case: Θ( n^2 )
                 Worst case:   O( n^2 )
  */
-void bubble(int size, long long int data[]) {
+void bubble(int size, int data[]) {
         for(int i = 1; i < size; i++) {
                 for(int j = 0; j < size-1; j++) {
                         if(data[j] > data[j+1]) {
-                                long long int temp = data[j];
+                                int temp = data[j];
                                 data[j] = data[j+1];
                                 data[j+1] = temp;
                         }
@@ -69,8 +69,8 @@ int main() {
                 std::cin >> user_size;    // Takes in user input                                                                                  
                 if(user_size < 1) break;  // Exits user interface if input is less than 1
 
-                long long int user_array[user_size];      // Creates an array with user defined size
-                long long int user_array_2[user_size];    // Creates an array with user defined size
+                int user_array[user_size];      // Creates an array with user defined size
+                int user_array_2[user_size];    // Creates an array with user defined size
 
                 std::cout << "Enter a positive value to manual input elements or enter a negative to randomize inputs:\n > ";  // Prompts user
                 int user_choice = 0;
@@ -87,7 +87,7 @@ int main() {
                 } else {
                         for(int index = 0; index < user_size; index++) {
                                 std::cout << "Enter a value for the array at index " << index << "\n > "; // Prompts the user
-                                long long int user_element = 0;
+                                int user_element = 0;
                                 std::cin >> user_element;             // Takes in user input
                                 user_array[index] = user_element;     //  Inserts input into the array
                                 user_array_2[index] = user_element;   // Inserts input into the array
