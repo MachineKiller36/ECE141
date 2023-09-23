@@ -12,12 +12,6 @@
                 2. Then it swaps with the element in the first position
                 3. Next, if finds the second smallest element and swaps the elements in position two
                 4. Repeats until the array is sorted
-
-
-        Asymptotic Analysis:
-                Best case:    Ω( n^2 )
-                Average case: Θ( n^2 )
-                Best case:    O( n^2 )
  */
 void selection(int size, int data[]) {
         for(int index = 0; index < size; index++) {                             // Iterates through all elements
@@ -42,11 +36,6 @@ void selection(int size, int data[]) {
                 1. Iterates over all elements
                 2. Swaps each element with the next element if out of order
                 3. Repeats until no swaps are needed
-
-        Asymptotic Analysis:
-                Best case:    Ω( n )
-                Average case: Θ( n^2 )
-                Worst case:   O( n^2 )
  */
 void bubble(int size, int data[]) {
         for(int i = 1; i < size; i++) {
@@ -123,7 +112,7 @@ int main() {
                 std::cout << "\n\n\n\n\n\n\n";
         }
         //// Test Bench ////
-                //// Test Bench ////
+                //// Test Arrays ////
         int short_sorted_select[10];
         int short_sorted_bubble[10];
         int short_half_select[10];
@@ -144,7 +133,7 @@ int main() {
         int long_half_bubble[100];
         int long_reverse_select[100];
         int long_reverse_bubble[100];
-        // Primes Sorted Arrays //
+        // Fills Sorted Arrays //
         for(int i = 0; i < 100; i++) {
                 if(i < 10) {
                         short_sorted_select[i] = i;
@@ -159,7 +148,7 @@ int main() {
                         long_sorted_bubble[i] = i;
                 }
         }
-        // Primes Reverse Sorted Arrays //
+        // Fills Reverse Sorted Arrays //
         int value1 = 10;
         int value2 = 50;
         int value3 = 100;
@@ -180,7 +169,7 @@ int main() {
                 value2--;
                 value3--;
         }
-        // Primes Half Sorted Arrays //
+        // Fills Half Sorted Arrays //
         value1 = 10;
         for(int i = 0; i < 10; i++) {
                 if(i < 5) {
@@ -236,7 +225,7 @@ int main() {
         time.stop();
         bubble_time = time.get_time_micro();
         std::cout << "Medium\t|\t " << select_time << " us \t|\t " << bubble_time << " us\n";
-
+        
         time.start();
         selection(100,long_sorted_select);
         time.stop();
