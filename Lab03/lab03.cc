@@ -21,7 +21,7 @@ void selection(int size, int data[]) {
                                 smallest = position;                            // Sets smallest equal to position
                         }
                 }
-                int temp = data[index];                                // Temporary variable to hold data at index values
+                int temp = data[index];                                         // Temporary variable to hold data at index values
                 data[index] = data[smallest];                                   // Sets data at index with the value at data smallest
                 data[smallest] = temp;                                          // Sets data at smallest with temporary variable
         }
@@ -38,12 +38,12 @@ void selection(int size, int data[]) {
                 3. Repeats until no swaps are needed
  */
 void bubble(int size, int data[]) {
-        for(int i = 1; i < size; i++) {
-                for(int j = 0; j < size-1; j++) {
-                        if(data[j] > data[j+1]) {
-                                int temp = data[j];
-                                data[j] = data[j+1];
-                                data[j+1] = temp;
+        for(int i = 1; i < size; i++) {                                         // Iterates though its size starting at 1
+                for(int j = 0; j < size-1; j++) {                               // Iterates through the array again 
+                        if(data[j] > data[j+1]) {                               // Checks if next spot in array is less than the curren spot
+                                int temp = data[j];                             //
+                                data[j] = data[j+1];                            //  Swaps spots
+                                data[j+1] = temp;                               //
                         }
                 }
         }
