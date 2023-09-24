@@ -20,9 +20,12 @@ void selection(int size, int data[]) {
                 data[smallest] = temp;						//c8 n
         }
 }
-Worst case: c1(n+1)+c2(n)+c3(Σ(j=1;n)tj)+c4(Σ(j=1;n)tj-1)+c5(Σ(j=1;n)tj-2)+n(c6+c7+c8) = O(n^2)
-Average case: c1(n+1)+c2(n)+c3(Σ(j=1;n)tj)+c4(Σ(j=1;n)tj-1)+c5(Σ(j=1;n)tj-2)+n(c6+c7+c8) = Θ(n^2)
-Best case: c1(n+1)+c2(n)+c3(Σ(j=1;n)tj)+c4(Σ(j=1;n)tj-1)+n(c6+c7+c8) = Ω(n^2)
+Worst case: c1(n+1)+c2(n)+c3(Σ(j=1;n)tj)+c4(Σ(j=1;n)tj-1)+c5(Σ(j=1;n)tj-2)+n(c6+c7+c8) 
+         = O(n^2)
+Average case: c1(n+1)+c2(n)+c3(Σ(j=1;n)tj)+c4(Σ(j=1;n)tj-1)+c5(Σ(j=1;n)tj-2)+n(c6+c7+c8) 
+           = Θ(n^2)
+Best case: c1(n+1)+c2(n)+c3(Σ(j=1;n)tj)+c4(Σ(j=1;n)tj-1)+n(c6+c7+c8)
+          = Ω(n^2)
 
 //// Bubble Sort Algorithm ////
 /*
@@ -39,10 +42,9 @@ void bubble(int size, int data[]) {
                 }
         }
 }
-Worst case: c1(n+2)+c2(Σ(j=1;n)tj)+c3(Σ(j=1;n)tj-1)+c4(Σ(j=1;n)tj-2)+c5(Σ(j=1;n)tj-2)+c6(Σ(j=1;n)tj-2)=O(n^2)
-Average case: c1(n+2)+c2(Σ(j=1;n)tj)+c3(Σ(j=1;n)tj-1)+c4(Σ(j=1;n)tj-2)+c5(Σ(j=1;n)tj-2)+c6(Σ(j=1;n)tj-2)=Θ(n^2)
-Best Case: c1(n+2)+c2(Σ(j=1;n)tj)+c3(Σ(j=1;n)tj-1)= Ω(n^2)
-
-int main() {
-	
-}
+Worst case: c1(n+2)+c2(Σ(j=1;n)tj)+c3(Σ(j=1;n)tj-1)+c4(Σ(j=1;n)tj-2)+c5(Σ(j=1;n)tj-2)+c6(Σ(j=1;n)tj-2) 
+             =O(n^2)
+Average case: c1(n+2)+c2(Σ(j=1;n)tj)+c3(Σ(j=1;n)tj-1)+c4(Σ(j=1;n)tj-2)+c5(Σ(j=1;n)tj-2)+c6(Σ(j=1;n)tj-2)
+             = Θ(n^2)
+Best Case: c1(n+2)+c2(Σ(j=1;n)tj)+c3(Σ(j=1;n)tj-1)
+             = Ω(n^2)
