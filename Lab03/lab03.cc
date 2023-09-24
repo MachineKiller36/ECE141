@@ -82,24 +82,25 @@ int main() {
                                 user_array_2[index] = user_element;   // Inserts input into the array
                         }
                 }
-                if(user_size < 50) {
+                if(user_size < 50) {                                  // Purpose: It to limit the terminal screen being flooded with characters
                         std::cout << "User array:\n";
-                        for(int index = 0; index < user_size; index++) {
+                        for(int index = 0; index < user_size; index++) {  //  Purpose: Is to print all the values in the user's array
                                 std::cout << user_array[index] << "\t";
                         }
                 }
                 std::cout << "\n\nSelection sort:\n";
-                time.start();
-                selection(user_size,user_array);
-                time.stop();
-                time.print_screen();
+                time.start();                                // time.start(), starts the timer
+                selection(user_size,user_array);             // Does selection sort
+                time.stop();                                 // time.stop(), stops the timer
+                time.print_screen();                         // Prints the timer results onto the terminal screen
 
                 std::cout << "\nBubble sort:\n";
                 time.start();
-                bubble(user_size, user_array_2);
+                bubble(user_size, user_array_2);             // Does bubble sort
                 time.stop();
                 time.print_screen();
                 if(user_size < 50) {
+                        // Prints the arrays sorted by selection and bubble functions
                         std::cout << "\n\nSelection sort resulting array:\n";
                         for(int index = 0; index < user_size; index++) {
                                 std::cout << "\t" << user_array[index];
@@ -112,7 +113,7 @@ int main() {
                 std::cout << "\n\n\n\n\n\n\n";
         }
         //// Test Bench ////
-                //// Test Arrays ////
+                //// Creates Test Arrays ////
         int short_sorted_select[10];
         int short_sorted_bubble[10];
         int short_half_select[10];
