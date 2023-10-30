@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "bst.h"
 #include "Timer.h"
 
@@ -9,6 +11,7 @@ void print_array(int* array, int size) {
 }
 
 int main() {
+	srand(time(0));
 	bst<int> tree;
 	////////////////	USER INTERFACE		/////////////////
 	while(true) {
