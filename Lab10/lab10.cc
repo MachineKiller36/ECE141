@@ -2,7 +2,6 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
-#include "Timer.h"
 
 #define HASHSIZE 4001
 
