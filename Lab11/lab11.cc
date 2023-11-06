@@ -21,7 +21,7 @@ int main() {
 		if(user_size <= 0 ) break;
 		int user_array[user_size];
 
-		std::cout << "Enter a positive value to randomize the value or a zero or negative value to manually input values:\n > ";
+		std::cout << "\nEnter a positive value to randomize the value or a zero or negative value to manually input values:\n > ";
 		int user_choice = 0;
 		std::cin >> user_choice;
 		if(user_choice > 0) {
@@ -32,7 +32,7 @@ int main() {
 			}
 		} else {
 			for(int i = 0; i < user_size; i++) {
-				std::cout << "Enter a element into the array.\nIndex " << i << ":\t";
+				std::cout << "\nEnter a element into the array.\nIndex " << i << ":\t";
 				int user_value = 0;
 				std::cin >> user_value;
 				user_array[i] = user_value;
@@ -40,7 +40,7 @@ int main() {
 			}
 		}
 
-		std::cout << "Inserted elements: ";
+		std::cout << "\n`Inserted elements: ";
 		print_array(user_array, user_size);
 
 		std::cout << "\nPost-order: ";

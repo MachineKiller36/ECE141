@@ -91,8 +91,8 @@ class bst {
 		void print_recursive(Node* temp) const noexcept{
 			if(!temp) return;
 			print_recursive(temp->left);
-			std::cout << temp->data << '\t';
 			print_recursive(temp->right);
+			std::cout << temp->data << '\t';
 		}
 	private /* Members */:
 		Node* m_root  = nullptr;
